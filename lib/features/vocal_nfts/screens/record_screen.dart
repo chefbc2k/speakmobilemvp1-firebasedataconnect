@@ -4,6 +4,7 @@ import 'package:audio_waveforms/audio_waveforms.dart';
 
 import '../../../core/services/backend/audio_processor.dart';
 import '../../../core/services/frontend/recording_service.dart';
+import '../../../core/utils/error_handler.dart';
 
 class RecordScreen extends StatefulWidget {
   final RecordingService? recordingService;
@@ -133,18 +134,10 @@ class _RecordScreenState extends State<RecordScreen> {
   }
 
   void _showErrorDialog(String message) {
-    showDialog(
+    ErrorHandler.showErrorDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Error'),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
-          ),
-        ],
-      ),
+      title: 'Error',
+      message: message,
     );
   }
 

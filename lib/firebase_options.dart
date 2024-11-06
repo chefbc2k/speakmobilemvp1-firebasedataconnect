@@ -24,15 +24,6 @@ class DefaultFirebaseOptions {
         return android;
       case TargetPlatform.iOS:
         return ios;
-      case TargetPlatform.macOS:
-        return macos;
-      case TargetPlatform.windows:
-        return windows;
-      case TargetPlatform.linux:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
@@ -41,50 +32,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC5e3XCO6Hr-vDEQ61AS5JkAn0mUA-vzO4',
-    appId: '1:848874904415:web:893b8dacf1445c7b1634ea',
-    messagingSenderId: '848874904415',
-    projectId: 'speakfamily-e2b51',
-    authDomain: 'speakfamily-e2b51.firebaseapp.com',
-    storageBucket: 'speakfamily-e2b51.firebasestorage.app',
-    measurementId: 'G-WP5MM095TZ',
+    apiKey: 'YOUR-WEB-API-KEY',
+    appId: 'YOUR-WEB-APP-ID',
+    messagingSenderId: 'YOUR-SENDER-ID',
+    projectId: 'speakmobilemvp2',
+    authDomain: 'YOUR-AUTH-DOMAIN',
+    storageBucket: 'YOUR-STORAGE-BUCKET',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyACHozBCxn58kxXH4UZVTH3sgq6UlbMMOg',
-    appId: '1:848874904415:android:a0fe5d7db3ef69ab1634ea',
-    messagingSenderId: '848874904415',
-    projectId: 'speakfamily-e2b51',
-    storageBucket: 'speakfamily-e2b51.firebasestorage.app',
+    apiKey: 'YOUR-ANDROID-API-KEY',
+    appId: 'YOUR-ANDROID-APP-ID',
+    messagingSenderId: 'YOUR-SENDER-ID',
+    projectId: 'speakmobilemvp2',
+    storageBucket: 'YOUR-STORAGE-BUCKET',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC44x5-GeO5EgDhlGvTxB1pTL_DY1uWA3s',
-    appId: '1:848874904415:ios:bdfaf607ef241b4c1634ea',
-    messagingSenderId: '848874904415',
-    projectId: 'speakfamily-e2b51',
-    storageBucket: 'speakfamily-e2b51.firebasestorage.app',
-    iosClientId: '848874904415-gp91gqled1jb59esb3r2pt3v8fab6odt.apps.googleusercontent.com',
-    iosBundleId: 'com.example.speakmobilemvp',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC44x5-GeO5EgDhlGvTxB1pTL_DY1uWA3s',
-    appId: '1:848874904415:ios:bdfaf607ef241b4c1634ea',
-    messagingSenderId: '848874904415',
-    projectId: 'speakfamily-e2b51',
-    storageBucket: 'speakfamily-e2b51.firebasestorage.app',
-    iosClientId: '848874904415-gp91gqled1jb59esb3r2pt3v8fab6odt.apps.googleusercontent.com',
-    iosBundleId: 'com.example.speakmobilemvp',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyC5e3XCO6Hr-vDEQ61AS5JkAn0mUA-vzO4',
-    appId: '1:848874904415:web:fe5e46e5df1c3c281634ea',
-    messagingSenderId: '848874904415',
-    projectId: 'speakfamily-e2b51',
-    authDomain: 'speakfamily-e2b51.firebaseapp.com',
-    storageBucket: 'speakfamily-e2b51.firebasestorage.app',
-    measurementId: 'G-NRBR97YM3H',
+    apiKey: 'YOUR-IOS-API-KEY',
+    appId: 'YOUR-IOS-APP-ID',
+    messagingSenderId: 'YOUR-SENDER-ID',
+    projectId: 'speakmobilemvp2',
+    storageBucket: 'YOUR-STORAGE-BUCKET',
+    iosClientId: 'YOUR-IOS-CLIENT-ID',
+    iosBundleId: 'YOUR-IOS-BUNDLE-ID',
   );
 }

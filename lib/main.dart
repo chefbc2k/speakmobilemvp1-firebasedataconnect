@@ -7,10 +7,12 @@ import 'package:speakmobilemvp/core/services/frontend/payment_service.dart';
 import 'package:speakmobilemvp/core/services/frontend/recording_service.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:speakmobilemvp/core/services/analytics/analytics_service.dart';
 import 'package:speakmobilemvp/core/theme/app_colors.dart';
 import 'package:provider/provider.dart';
 import 'package:speakmobilemvp/core/services/frontend/contract_service.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,15 +20,25 @@ void main() async {
   // Load environment variables
   await dotenv.load(fileName: ".env");
   
-  // Initialize Firebase
+  // Initialize Firebase with production configuration
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // Initialize Supabase
+  // Configure Firebase Auth for production
+  await firebase_auth.FirebaseAuth.instance.setPersistence(firebase_auth.Persistence.LOCAL);
+  firebase_auth.FirebaseAuth.instance.authStateChanges().listen((firebase_auth.User? user) {
+    // Handle auth state changes globally
+  });
+
+  // Initialize Supabase with production configuration
   await Supabase.initialize(
     url: Environment.supabaseUrl,
     anonKey: Environment.supabaseAnonKey,
+    debug: false, // Disable debug logs in production
+    realtimeClientOptions: const RealtimeClientOptions(
+      eventsPerSecond: 10, // Rate limiting for realtime events
+    ),
   );
 
   // Initialize Payment Service

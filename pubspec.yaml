@@ -11,11 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
   
-  # Firebase
-  firebase_core: ^3.6.0
+  # Firebase (Auth & Analytics only)
+  firebase_core: ^2.32.0
   firebase_analytics: ^10.8.0
-  firebase_database: ^10.4.0
-  cloud_firestore: ^4.15.5
+  firebase_auth: ^4.16.0
   
   # UI Components
   fl_chart: ^0.69.0

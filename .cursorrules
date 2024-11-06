@@ -1,0 +1,163 @@
+// Voice NFT Platform Development Guidelines
+
+## Project Overview
+- Develop a cross-platform application ecosystem with Flutter, comprising:
+  - Mobile client for user interactions and lightweight processing.
+  - Web platform serving as both user interface and processing server.
+  - Smart contract integration via ThirdWeb's API.
+  - Advanced audio processing and NFT management capabilities.
+
+## Technology Stack
+
+### Core Technologies
+- **Flutter/Dart**: Primary framework and language for cross-platform development.
+  - Utilize Flutter’s SDK, libraries, and widgets for UI and functionality.
+  - Ensure compatibility across iOS, Android, and web platforms.
+- **Supabase**: Backend services and real-time features.
+- **ThirdWeb API**: Blockchain interactions.
+- **IPFS**: Decentralized storage.
+- **FFmpeg**: Audio processing.
+
+### Mobile-Specific
+- Native audio capture and processing capabilities through Flutter plugins.
+- Offline-first architecture with local storage using Flutter’s local data management tools.
+- Background processing for audio tasks.
+- Native platform integrations (iOS/Android) via Flutter's platform channels.
+
+### Web-Specific (Server Components)
+- Flutter web for UI and processing server.
+- WebSocket connections for real-time communication.
+- Heavy computation handling (audio processing, ML tasks).
+- API endpoint management.
+
+## Development Environment
+- **IDE**: Recommend using Visual Studio Code or Android Studio for Flutter development, with Flutter and Dart extensions.
+- **Debugging Tools**:
+  - Utilize Flutter’s DevTools for debugging, performance monitoring, and inspecting widget trees.
+  - Employ Flutter's `debugPrint()` for console logging and error tracking.
+  - Use Flutter’s hot reload/hot restart capabilities to speed up development and testing.
+  - Implement platform-specific debugging options for iOS (Xcode) and Android (Android Studio).
+- **Testing Environment**:
+  - Use Flutter’s built-in testing tools for widget, integration, and unit testing.
+  - Perform cross-platform testing to ensure compatibility on both iOS and Android.
+
+## Coding Standards
+
+### General Guidelines
+- Adhere to Dart's official style guide and Flutter’s widget and state management best practices.
+- Maintain a clean, modular codebase with proper separation of concerns.
+- Use dependency injection for service management.
+- Write comprehensive unit, widget, and integration tests using Flutter’s testing libraries.
+- Ensure proper error handling for all API interactions to enhance robustness.
+
+### Mobile-Specific Standards
+- Implement state management using the BLoC pattern.
+- Handle platform-specific features via abstract interfaces.
+- Manage device resources efficiently.
+- Implement effective caching strategies.
+
+### Web Server Standards
+- Implement API versioning.
+- Use security middleware.
+- Implement rate limiting and request validation.
+- Handle concurrent processing efficiently.
+
+## Architecture Guidelines
+
+### Mobile Architecture
+## API Integration Guidelines
+
+### ThirdWeb Integration
+- Use secure wallet connections.
+- Handle contract interactions asynchronously.
+- Ensure proper error handling for blockchain operations.
+- Cache contract data where appropriate.
+
+### Supabase Integration
+- Implement real-time listeners where suitable.
+- Use proper database indexing and optimize queries.
+- Securely handle authentication.
+
+## Security Considerations
+
+### General Security
+- Securely store and manage API keys or tokens.
+- Validate and sanitize all inputs and outputs to prevent security vulnerabilities.
+- Follow secure network communication and data storage practices.
+
+### Mobile-Specific Security
+- Secure local storage implementation.
+- Manage credentials properly.
+- Secure audio data handling and app signing.
+
+### Web-Specific Security
+- Configure CORS appropriately.
+- Implement API authentication.
+- Use rate limiting and input validation.
+
+## User Experience
+- Provide clear feedback to users during network operations (e.g., loading indicators).
+- Handle network errors gracefully and inform users appropriately.
+- Ensure responsive UI during asynchronous operations.
+
+## Testing and Debugging
+- Write unit tests for API functions.
+- Use Flutter’s DevTools to monitor network requests, inspect widget trees, and debug performance issues.
+- Employ Flutter's `debugPrint()` and logging utilities for error tracking.
+- Log troubleshooting information while avoiding sensitive data exposure.
+
+## Processing Pipeline
+
+### Audio Processing
+- Utilize FFmpeg for audio manipulation.
+- Handle audio format conversion and error management.
+- Optimize for varied devices.
+
+### NFT Operations
+- Implement a robust minting process.
+- Handle metadata generation and IPFS storage.
+- Manage transaction states effectively.
+
+## Documentation Requirements
+
+### Code Documentation
+- Provide inline documentation for complex logic and API interactions.
+- Maintain a README with setup instructions and usage guidelines.
+- Document third-party dependencies and configurations.
+
+### User Documentation
+- Include feature guides, troubleshooting tips, and security best practices.
+
+## Deployment Guidelines
+
+### Mobile Deployment
+- Follow App Store and Play Store submission guidelines.
+- Manage release versions and conduct beta testing.
+
+### Web Deployment
+- Set up server requirements and scaling considerations.
+- Monitor performance and implement backup procedures.
+
+## Performance Considerations
+
+### Mobile Performance
+- Optimize battery usage, memory, network efficiency, and cache management.
+
+### Web Performance
+- Implement load balancing, resource scaling, database optimization, and manage processing queues.
+
+## Error Handling
+
+### Mobile Error Handling
+- Handle offline mode and API errors, providing user feedback and logging issues.
+
+### Web Error Handling
+- Manage processing errors, API responses, system monitoring, and error reporting.
+
+## Maintenance Guidelines
+
+### Regular Maintenance
+- Conduct code reviews, monitor performance, apply security updates, and maintain databases.
+
+### Update Procedures
+- Manage versioning, database migrations, API versioning, and client updates.

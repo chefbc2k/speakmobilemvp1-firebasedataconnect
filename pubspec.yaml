@@ -12,10 +12,10 @@ dependencies:
     sdk: flutter
   
   # Firebase
-  firebase_core: ^2.24.2
+  firebase_core: ^3.6.0
   firebase_analytics: ^10.8.0
-  firebase_database: ^latest_version
-  cloud_firestore: ^latest_version  # if using Firestore
+  firebase_database: ^10.4.0
+  cloud_firestore: ^4.15.5
   
   # UI Components
   fl_chart: ^0.69.0
@@ -63,9 +63,6 @@ dependencies:
   record: ^5.0.4
   volume_controller: ^2.0.8
   device_info_plus: ^11.1.0
-
-  # Firebase Data Connect
-  firebase_data_connect: ^latest_version  # Replace with actual version
 
 dev_dependencies:
   flutter_test:
